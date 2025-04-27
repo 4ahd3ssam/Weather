@@ -1,7 +1,7 @@
 var apiKey = "27a418334b9a4fa1893112400252704";
 var searchInput = document.getElementById("searchInput");
 var searchValue;
-fetchWeatherAPI("cairo");
+
 searchInput.addEventListener("input", function () {
     searchValue = searchInput.value;
     fetchWeatherAPI(searchValue);
@@ -12,7 +12,6 @@ async function fetchWeatherAPI(searchValue) {
         Method: "POST",
     })
     var result = await response.json();
-    console.log(result);
 
     document.getElementById("country").innerText = result.location.name;
     displayCurrentDay(result.current)
@@ -50,4 +49,20 @@ function displayNextDays(info) {
         document.querySelectorAll(".nextDay .nextDayStatus")[i - 1].innerText = info[i].day.condition.text;
 
     }
+}
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+}
+
+async function success(position) {
+    var response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`);
+    var result = await response.json();
+    var city = result.city
+
+    fetchWeatherAPI(city);
+}
+
+function error() {
+    alert("Sorry, no position available.");
 }
