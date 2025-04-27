@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asstes/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="navigation-container py-4">
+        <div class="container">
+            <nav class="navbar navbar-expand">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center gap-4" href="#">
+                        <img src="images/logo@2x.png" class="img-logo" alt="">
+                        <div class="d-flex flex-column justify-content-between">
+                            <h5 class="text-white fs-5">Weather</h5>
+                            <h6 class="text-secondary fs-12px mb-0">tagline goes here</h6>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5">
+                            <li class="nav-item">
+                                <a class="nav-link px-3 py-1 active" aria-current="page" href="#">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <main class="pb-5">
+        <div class="hero">
+            <div class="container overflow-auto">
+                <div class="search-bar position-relative mt-5">
+                    <input type="search" class="form-control rounded-pill py-3 px-4 text-white" id="searchInput"
+                        placeholder="Find your location..">
+                    <button
+                        class="btn rounded-pill position-absolute end-0 top-50 translate-middle-y text-white px-4">Find</button>
+                </div>
+            </div>
+        </div>
+        <div class="weather">
+            <div class="container">
+                <div class="row rounded-2 overflow-hidden g-0">
+                    <div class="col-12 col-lg-4">
+                        <div class="item h-100" id="currDay">
+                            <div class="head py-2 px-3 d-flex justify-content-between align-items-center text-gray">
+                                <h6 class="fs-14px">Sunday</h6>
+                                <h6 class="fs-14px">27 Apr</h6>
+                            </div>
+                            <div class="content p-3">
+                                <h5 class="text-gray fw-medium fs-5" id="country">Cairo</h5>
+                                <div class="d-flex flex-wrap gap-2 align-items-center">
+                                    <div class="text-white fs-70px d-flex align-items-center fw-bold">
+                                        <span id="currDayDegree">25.1</span>
+                                        <sup>o</sup>
+                                        <span>C</span>
+                                    </div>
+                                    <img src="images/113.webp" id="currDayIcon" alt="">
+                                </div>
+                                <div>
+                                </div>
+                                <div><span class="text-primary" id="currDayStatus">Sunny</span></div>
+                                <div class="d-flex gap-3 align-items-center mt-3">
+                                    <div class="d-flex align-items-center gap-2 text-gray fs-14px">
+                                        <div class="w-25">
+                                            <img src="images/icon-umberella@2x.png" class="w-100 d-block" alt="">
+                                        </div>
+                                        <span id="humidity">20%</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 text-gray fs-14px">
+                                        <div class="w-25">
+                                            <img src="images/icon-wind@2x.png" class="w-100 d-block" alt="">
+                                        </div>
+                                        <span id="wind">18km/h</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 text-gray fs-14px">
+                                        <div class="w-25">
+                                            <img src="images/icon-compass@2x.png" class="w-100 d-block" alt="">
+                                        </div>
+                                        <span id="dir">East</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="item nextDay h-100">
+                            <div class="head py-2 px-3 text-gray">
+                                <h6 class="fs-14px text-center">Sunday</h6>
+                            </div>
+                            <div class="content p-3 d-flex flex-column align-items-center gap-2">
+                                <div>
+                                    <img src="images/113.webp" class="nextDayIcon" alt="">
+                                </div>
+                                <div class="text-white d-flex align-items-center fw-bold fs-4">
+                                    <span class="nextDayMax">31</span>
+                                    <sup>o</sup>
+                                    <span>C</span>
+                                </div>
+                                <div class="text-gray d-flex align-items-center fw-medium">
+                                    <span class="nextDayMin">12.7</span>
+                                    <sup>o</sup>
+                                    <span>C</span>
+                                </div>
+                                <div><span class="text-primary nextDayStatus">Sunny</span></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="item nextDay h-100">
+                            <div class="head py-2 px-3 text-gray">
+                                <h6 class="fs-14px text-center">Sunday</h6>
+                            </div>
+                            <div class="content p-3 d-flex flex-column align-items-center gap-2">
+                                <div>
+                                    <img src="images/113.webp" class="nextDayIcon" alt="">
+                                </div>
+                                <div class="text-white d-flex align-items-center fw-bold fs-4">
+                                    <span class="nextDayMax">31</span>
+                                    <sup>o</sup>
+                                    <span>C</span>
+                                </div>
+                                <div class="text-gray d-flex align-items-center fw-medium">
+                                    <span class="nextDayMin">12.7</span>
+                                    <sup>o</sup>
+                                    <span>C</span>
+                                </div>
+                                <div><span class="text-primary nextDayStatus">Sunny</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
